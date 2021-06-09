@@ -73,11 +73,12 @@ namespace Serialization
                             _organizationName = reader.Value;
                             break;
                         case "ConcertDate":
+                            reader.Read();
                             _concertDate = DateTime.Parse(reader.Value);
                             break;
                         case "Performances":
                             _performances = Performance.ReadPerformances(reader);
-                            AddPerformance();
+                            //AddPerformance();
                             break;
                     }
                 }
@@ -92,7 +93,7 @@ namespace Serialization
             writer.WriteElementString("OrganizationName", _organizationName);
             writer.WriteElementString("ConcertDate", _concertDate.ToString());
             writer.WriteStartElement("Performances");
-            Performances?.ForEach(lumber => { lumber.WriteXml(writer); });
+            Performances?.ForEach(performance => { performance.WriteXml(writer); });
             writer.WriteEndElement();
         }
 

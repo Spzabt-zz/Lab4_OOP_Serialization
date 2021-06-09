@@ -51,6 +51,7 @@ namespace Serialization
                             _name = reader.Value;
                             break;
                         case "Surname":
+                            reader.Read();
                             _surname = reader.Value;
                             break;
                     }
@@ -78,7 +79,7 @@ namespace Serialization
                 reader.MoveToContent();
                 while (reader.Read())
                 {
-                    if (reader.IsStartElement() && !reader.Name.Equals("Performer"))
+                    if (reader.IsStartElement() && !reader.Name.Equals("Performers"))
                     {
                         var performer = new Performer();
                         performer.ReadXml(reader);

@@ -27,9 +27,9 @@ namespace Serialization
             //_performers = new List<Performer>();
             _performers = Performer.ReadPerformers("_performers");
 
-            foreach (var concertPerformance in _concert.Performances)
+            foreach (var performer in _performers)
             {
-                PerformerComboBox.Items.Add(concertPerformance?.Performer.ToString());
+                PerformerComboBox.Items.Add(performer?.ToString());
             }
 
             DatePicker.Text = _concert?.ConcertDate.ToString();

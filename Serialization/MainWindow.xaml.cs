@@ -28,6 +28,7 @@ namespace Serialization
             if (createWindow.ShowDialog() == true)
             {
                 ConcertList.Items.Add(_concert.ToString());
+                _concerts.Add(_concert);
             }
             else
                 MessageBox.Show("Changes didn't save");
