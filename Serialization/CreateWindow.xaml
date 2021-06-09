@@ -1,0 +1,43 @@
+<Window x:Class="Serialization.CreateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Serialization"
+        mc:Ignorable="d"
+        Title="CreateWindow" Height="480" Width="400">
+    <Grid>
+        <Label x:Name="PerformerLabel" Content="Author" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="10,15,0,0" />
+        <ComboBox x:Name="PerformerComboBox" HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Margin="10,50,0,0" Width="130" />
+        <Label x:Name="CompositionTypeLabel" Content="Composition" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="10,90,0,0" />
+        <ComboBox x:Name="CompositionComboBox" HorizontalAlignment="Left" VerticalAlignment="Top"
+                  Margin="10,130,0,0" Width="130" />
+        <DatePicker x:Name="DatePicker" HorizontalAlignment="Left" Margin="10, 180, 0, 0" VerticalAlignment="Top"
+                    Width="179" FirstDayOfWeek="Monday" IsTodayHighlighted="True" />
+        <Button x:Name="AddPerformerButton" Content="Add author" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,15,20,0" Height="30" Width="70" Click="AddPerformerButton_OnClick" />
+        <Button x:Name="EditPerformerButton" Content="Edit author" HorizontalAlignment="Right" VerticalAlignment="Top"
+                Margin="0,60,20,0" Height="30" Width="70" Click="EditPerformerButton_OnClick" />
+        <Button x:Name="SaveButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="10,400,0,0" Height="30" Width="70" Click="SaveButton_OnClick" />
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top"
+                Margin="100,400,0,0" Height="30" Width="70" Click="CancelButton_OnClick" />
+        <Label x:Name="PerformanceDurationLabel" Content="Duration" HorizontalAlignment="Left" VerticalAlignment="Top"
+               Margin="10,225,0,0" />
+        <TextBox x:Name="PerformanceDurationTextBox" HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Margin="120,230,0,0" Width="130" />
+        <Label x:Name="CompositionNameLabel" Content="Composition name" HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,255,0,0" />
+        <TextBox x:Name="CompositionNameTextBox" HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Margin="120,260,0,0" Width="130" />
+        <Label x:Name="OrganizationNameLabel" Content="Organization name" HorizontalAlignment="Left"
+               VerticalAlignment="Top"
+               Margin="10,285,0,0" />
+        <TextBox x:Name="OrganizationNameTextBox" HorizontalAlignment="Left" VerticalAlignment="Top"
+                 Margin="120,290,0,0" Width="130" />
+    </Grid>
+</Window>
