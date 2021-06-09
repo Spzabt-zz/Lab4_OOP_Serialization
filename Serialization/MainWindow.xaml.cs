@@ -17,7 +17,10 @@ namespace Serialization
         {
             InitializeComponent();
             _concerts = Concert.ReadConcerts("_concerts");
-            _concerts.ForEach(concert => { ConcertList.Items.Add(concert.ToString()); });
+            foreach (var concert in _concerts)
+            {
+                ConcertList.Items.Add(concert.ToString());
+            }
         }
 
         private void CreateBtn_OnClick(object sender, RoutedEventArgs e)
@@ -43,7 +46,8 @@ namespace Serialization
                 return;
             }
 
-            var createWindow = new CreateWindow(_concert.Performances[index], _concert);
+            _concert = _concerts[index];
+            var createWindow = new CreateWindow(_concert.Performances[0], _concert);
 
             if (createWindow.ShowDialog() == true)
             {

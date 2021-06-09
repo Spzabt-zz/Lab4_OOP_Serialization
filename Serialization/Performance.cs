@@ -103,7 +103,7 @@ namespace Serialization
             var performance = new Performance();
             while (reader.Read())
             {
-                if (reader.IsStartElement() && !reader.Name.Equals("Performance"))
+                if (reader.IsStartElement() && !reader.Name.Equals("Performances"))
                 {
                     performance.ReadXml(reader);
                     performances.Add(performance);
@@ -114,7 +114,7 @@ namespace Serialization
             return performances;
         }
 
-        public static void WritePerformance(string fileName, List<Performance> performances)
+        public void WritePerformance(string fileName, List<Performance> performances)
         {
             var settings = new XmlWriterSettings
             {
@@ -125,8 +125,8 @@ namespace Serialization
             };
 
             var xmlWriter = XmlWriter.Create(fileName, settings);
-            xmlWriter.WriteStartElement("Lumbers");
-            performances.ForEach(lumber => { lumber.WriteXml(xmlWriter); });
+            xmlWriter.WriteStartElement("Performances");
+            performances.ForEach(performance => { performance.WriteXml(xmlWriter); });
             xmlWriter.WriteEndElement();
             xmlWriter.Close();
         }

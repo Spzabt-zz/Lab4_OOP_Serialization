@@ -78,6 +78,7 @@ namespace Serialization
                             break;
                         case "Performances":
                             _performances = Performance.ReadPerformances(reader);
+                            //_performances = Performance.ReadPerformances(reader);
                             //AddPerformance();
                             break;
                     }
@@ -107,7 +108,7 @@ namespace Serialization
                 while (reader.Read())
                 {
                     var concert = new Concert();
-                    if (reader.IsStartElement() && !reader.Name.Equals("Concert"))
+                    if (reader.IsStartElement() && !reader.Name.Equals("Concerts"))
                     {
                         concert.ReadXml(reader);
                         concerts.Add(concert);
